@@ -145,7 +145,7 @@ public class ArrayE<E> {
 
         //删除元素之后查看元素个数是否等于元素容量的1/4
         //如果等于1/4了则进行缩小数组容量data.length大小1/2，防止复杂度震荡
-        if (size == data.length / 4 && data.length /2 != 0)
+        if (size == data.length / 4 && data.length / 2 != 0)
             reSize(data.length / 2);
 
         return ret;
