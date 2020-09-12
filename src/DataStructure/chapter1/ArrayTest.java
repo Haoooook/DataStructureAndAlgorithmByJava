@@ -78,6 +78,8 @@ public class ArrayTest {
         arr.removeElement(7);
         System.out.println(arr);
 
+        System.out.println(arr.isEmpty());
+
         System.out.println("===============测试自动扩容=====================");
         for (int j = 0; j < 50; j++)
             arr.addLast(4 * j);
@@ -93,6 +95,8 @@ public class ArrayTest {
             arr.removeLast();
         System.out.println("这里减到剩10个的时候为1/4capacity，触发reSize()减半为20。。。继续减数量，容量继续减半直到容量减为1");
         System.out.println(arr);
+        System.out.println(arr.isEmpty());
+
 
     }
 

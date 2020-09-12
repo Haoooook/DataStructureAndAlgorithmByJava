@@ -166,6 +166,12 @@ public class ArrayE<E> {
             remove(index);
     }
 
+    boolean isEmpty(){
+        if(size == 0)
+            return true;
+        return false;
+    }
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
