@@ -84,8 +84,14 @@ public class ArrayTest {
         System.out.println(arr);
 
         System.out.println("===============测试自动减容=====================");
-        for (int k = 0; k < 20; k++)
+        for (int k = 0; k < 40; k++)
             arr.removeLast();
+        System.out.println("这里删除了40个元素，剩20个元素 = 1/4capacity 进行自动减容 避免出现多次reSize()操作提高效率");
+        System.out.println(arr+"\n");
+
+        for(int n = 0; n < 20; n ++)
+            arr.removeLast();
+        System.out.println("这里减到剩10个的时候为1/4capacity，触发reSize()减半为20。。。继续减数量，容量继续减半直到容量减为1");
         System.out.println(arr);
 
     }
