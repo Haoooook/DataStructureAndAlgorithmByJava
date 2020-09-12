@@ -36,13 +36,21 @@ public class ArrayE<E> {
         return data.length;
     }
 
-    E get(int index) {
+    public E get(int index) {
         if (index < 0 || index >= size)
             throw new IllegalArgumentException("get() failed, Require index >= 0 || index < size");
         return data[index];
     }
 
-    void set(int index, E e) {
+    public E getFirst(){
+        return get(0);
+    }
+
+    public E getLast(){
+        return get(size-1);
+    }
+
+    public void set(int index, E e) {
         if (index < 0 || index >= size)
             throw new IllegalArgumentException("set() failed, Require index >= 0 || index < size");
         data[index] = e;
@@ -103,7 +111,7 @@ public class ArrayE<E> {
     }
 
     //是否包含元素e?
-    boolean contains(E e) {
+    public boolean contains(E e) {
         for (int i = 0; i < size; i++) {
             if (e.equals(data[i])) //针对泛型的元素e，不能用基本数据类型的==比较 而是继承于Object的equals方法
                 return true;
@@ -113,7 +121,7 @@ public class ArrayE<E> {
     }
 
     //查找元素e的位置（索引）
-    int find(E e) {
+    public int find(E e) {
         for (int i = 0; i < size; i++) {
             if (e.equals(data[i]))
                 return i;
@@ -130,7 +138,7 @@ public class ArrayE<E> {
      * 但实现了泛型，为了释放空间可以设为null
      */
 
-    E remove(int index) {
+    public E remove(int index) {
         if (index < 0 || index >= size)
             throw new IllegalArgumentException("remove() failed, index is illegal!");
         E ret = data[index];
@@ -152,22 +160,22 @@ public class ArrayE<E> {
 
     }
 
-    E removeFirst() {
+    public E removeFirst() {
         return remove(0);
     }
 
-    E removeLast() {
+    public E removeLast() {
         return remove(size - 1);
     }
 
-    void removeElement(E e) {
+    public void removeElement(E e) {
         int index = find(e);
         if (index != -1)
             remove(index);
     }
 
-    boolean isEmpty(){
-        if(size == 0)
+    public boolean isEmpty() {
+        if (size == 0)
             return true;
         return false;
     }
