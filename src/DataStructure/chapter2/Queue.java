@@ -10,21 +10,17 @@ package DataStructure.chapter2;
  * @create 2020-09-12 22:29
  */
 public interface Queue<E> {
-    //O(1)
+
     int getSize();
 
-    //O(1)
     boolean isEmpty();
 
-    //O(1)均摊
     //每次添加都在队尾tail
     void enqueue(E e);
 
-    //O(n)
     //删除元素，从头开始
     E dequeue();
 
-    //O(1)
     //查看队首元素
     E getFront();
 
