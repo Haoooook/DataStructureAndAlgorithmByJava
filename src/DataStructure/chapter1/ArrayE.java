@@ -4,6 +4,16 @@ package DataStructure.chapter1;
  * 	模拟Java数组的底层实现逻辑
  * 	加入泛型 适应更多的数据类型（不包括基本数据类型但包括他们的包装类）
  *  添加动态数组的自动扩容方法 reSize（）
+ *
+ *  set(index,e)        O(1)
+ *  get(index)          O(1)
+ *  contains(e)         O(n)
+ *  find(e)             O(n)
+ *  addLast()           O(n)
+ *  addFirst()          O(n)
+ *  addFirst(index,e)   O(n)
+ *  removeLast()        O(n)
+ *
  */
 public class ArrayE<E> {
 
