@@ -3,6 +3,8 @@ package DataStructure.chapter2;
 import DataStructure.chapter1.ArrayE;
 
 /**
+ * 数组队列 队首进 队尾出。
+ * 直接用基于arrayE的数组逻辑
  * @author Damon
  * @create 2020-09-12 22:34
  */
