@@ -63,7 +63,7 @@ public class LinkedList<E> {
         add(0, e);
     }
 
-    //在链表中间插入元素
+    //在链表任意位置插入元素，引入虚拟头结点（浪费一个空间但不使用）
     public void add(int index, E e) {
 
         if (index < 0 || index > size)
