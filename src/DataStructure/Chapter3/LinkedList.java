@@ -1,4 +1,4 @@
-package DataStructure.Chapter3;
+package DataStructure.chapter3;
 
 /**
  * 链表
