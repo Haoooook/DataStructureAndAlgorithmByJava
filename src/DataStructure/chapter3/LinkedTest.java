@@ -33,9 +33,27 @@ public class LinkedTest {
         System.out.println(ll.remove(2));
         System.out.println(ll);
 
-        System.out.println("获得元素19的所引位置："+ll.getIndex(19));
+        System.out.println("获得元素19的所引位置：" + ll.getIndex(19));
         System.out.println(ll.removeElement(16));
         System.out.println(ll);
+
+    }
+
+    @Test
+    public void testLinkedListStack() {
+        LinkedListStack<Integer> linkedListStack = new LinkedListStack<>();
+        for (int i = 0; i < 10; i++)
+            linkedListStack.push(i * 7 + 1);
+        System.out.println(linkedListStack);
+
+        for (int j = 0; j < 5; j++) {
+            linkedListStack.pop();
+            System.out.println(linkedListStack);
+        }
+
+        System.out.println("链表栈 栈顶：" + linkedListStack.peek());
+        System.out.println("链表栈是否为空？" + linkedListStack.isEmpty());
+        System.out.println("链表栈的元素个数：" + linkedListStack.getSize());
 
     }
 }

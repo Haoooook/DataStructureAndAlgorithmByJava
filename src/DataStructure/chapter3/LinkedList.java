@@ -5,19 +5,19 @@ package DataStructure.chapter3;
  * 基本的动态结构
  * 优点：无需处理容量的问题（即增、删、插入快）
  * 缺点：丧失随机方问得能力
- *
+ * <p>
  * 数组：最大优点访问速度快。
- *
+ * <p>
  * 添加元素 O(n)
  * addLast(e)   O(n)
  * addFirst(e)  O(1)
  * add(index,e) O(n/2)=O(n)
- *
+ * <p>
  * 删除元素 O(n)
  * removeFirst()  O(n)
  * removeLast()   O(1)
  * remove(index)  O(n/2)=O(n)
- *
+ * <p>
  * 修改元素
  * set(index,e) O(n)
  * contains(e)  O(n)
@@ -123,6 +123,11 @@ public class LinkedList<E> {
         return cur.e;
     }
 
+    //获取第一个元素
+    public E getFirst() {
+        return get(0);
+    }
+
     /**
      * 把元素修改成目标元素
      *
@@ -218,7 +223,7 @@ public class LinkedList<E> {
      */
     public int getIndex(E e) {
         if (contains(e) == false)
-            throw new IllegalArgumentException("remove() failed,value is inExistent!");
+            throw new IllegalArgumentException("remove() failed,value is inexistent!");
         Node cur = dummyHead.next;
         int index = 0;
         for (int i = 0; i < size; i++) {
