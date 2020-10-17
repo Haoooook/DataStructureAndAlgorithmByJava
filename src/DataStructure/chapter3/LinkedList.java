@@ -30,7 +30,7 @@ package DataStructure.chapter3;
 public class LinkedList<E> {
 
     //设计私有属性的节点类,不需要告诉用户节点类的细节
-    private class Node {
+    class Node {
         public E e;
         public Node next;
 

@@ -56,4 +56,21 @@ public class LinkedTest {
         System.out.println("链表栈的元素个数：" + linkedListStack.getSize());
 
     }
+
+    @Test
+    public void testLinkedListQueue() {
+        LinkedListQueue<Integer> linkedListQueue = new LinkedListQueue<>();
+        for (int i = 0; i < 10; i++) {
+            linkedListQueue.enqueue(i * 7 - 3);
+            System.out.println(linkedListQueue);
+        }
+
+        System.out.println("----------------------------------------------------------------------------------");
+
+        for (int j = 0; j < 7; j++) {
+            linkedListQueue.dequeue();
+            System.out.println(linkedListQueue);
+        }
+
+    }
 }
