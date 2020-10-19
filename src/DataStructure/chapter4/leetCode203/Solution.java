@@ -24,24 +24,19 @@ package DataStructure.chapter4.leetCode203;
 public class Solution {
     public ListNode removeElements(ListNode head, int val) {
         //1. 2.
-        while (head != null && head.val == val) {
-            ListNode delNode = head;
-            head = head.next;
-            delNode.next = null;
-        }
+        while (head != null && head.val == val)
+            head=head.next;
         //3.
         if (head == null)
             return null;
         //4.
         ListNode prev = head;
         while (prev.next != null) {
-            if (prev.next.val == val) {
-                ListNode delNode = prev.next;
-                prev.next = delNode.next;
-                delNode.next = null;
-            } else {
+
+            if(prev.next.val ==val)
+                prev.next=prev.next.next;
+            else
                 prev = prev.next;
-            }
         }
         return head;
     }

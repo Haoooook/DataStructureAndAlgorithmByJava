@@ -21,7 +21,9 @@ package DataStructure.chapter4.leetCode203;
  * <p>
  * 不考虑空间开销（LeetCode网页编译器）、加入虚拟头结点
  * 好处？
- * 1.加入虚拟头结点不用考虑传入的链表为空链表情况
+ * 1.不用考虑传入的链表为空链表情况
+ * 2.直接进行比较val并删除节点
+ * 3.返回虚拟节点的下一个节点（真是节点）
  *
  * @author Damon
  * @create 2020-10-19 20:56
@@ -32,13 +34,6 @@ public class Solution2 {
         ListNode dummyHead = new ListNode(-1);
         dummyHead.next = head;
 
-        //1. 2.
-        while (head.val == val)
-            head = head.next;
-        //3.
-        if (head == null)
-            return null;
-        //4.
         ListNode prev = dummyHead;
         while (prev.next != null) {
             if (prev.next.val == val)
@@ -46,7 +41,7 @@ public class Solution2 {
             else
                 prev = prev.next;
         }
-        return head;
+        return dummyHead.next;
     }
 
 }
