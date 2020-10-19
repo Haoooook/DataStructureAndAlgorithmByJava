@@ -82,6 +82,7 @@ public class LinkedListQueue<E> implements Queue<E> {
 
     /**
      * 出队 注意当链表队列只有一个元素是出队后判断问题
+     *
      * @return
      */
     @Override
