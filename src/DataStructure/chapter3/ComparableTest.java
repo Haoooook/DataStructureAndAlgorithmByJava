@@ -47,8 +47,8 @@ public class ComparableTest {
 
         /*
         10w个数据的结果：
-            ArrayStack, run time: 0.0236697s
-            LinkedListStack, run time: 0.0085736s
+            ArrayStack, run time: 0.0130816s
+            LinkedListStack, run time: 0.0092281s
          */
     }
 
