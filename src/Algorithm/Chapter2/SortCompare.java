@@ -38,7 +38,7 @@ public class SortCompare {
         int T = Integer.parseInt(arg[3]);
         double t1 = timeRandomInput(alg1, N, T); // 算法1的总时间
         double t2 = timeRandomInput(alg2, N, T); // 算法2的总时间
-        StdOut.printf("For %d random Doubles\n %s is", N, alg1);
+        StdOut.printf("For %d random Doubles\n %s is ", N, alg1);
         StdOut.printf("%.1f times faster than %s\n", t2 / t1, alg2);
     }
 }
