@@ -38,5 +38,20 @@ public class testDemo {
         bst.postOrder();
         System.out.println();
         System.out.println(bst);
+
+    }
+
+    @Test
+    public void testBST3levelOrder(){
+        BST3<Integer> bst = new BST3<>();
+        int[] demo = {7,1,16,13,0,100,27,3,52};
+        for(int num : demo)
+            bst.add(num);
+        bst.levelOrder();
+        System.out.println();
+
+        bst.preOrder();
+        System.out.println();
+
     }
 }

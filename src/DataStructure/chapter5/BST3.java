@@ -1,5 +1,8 @@
 package DataStructure.chapter5;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * 二分搜索树Binary Search Tree
  * <p>
@@ -13,7 +16,11 @@ package DataStructure.chapter5;
  * contains（） 判断是否包含数据e 递归实现
  * 终止条件，找到节点==null，返false（既是判断在一开始判断根节点是否为空，也是在判断到叶子节点时都没找到即没有包含改元素）
  * <p>
- * 前序遍历
+ * 前序、中序、后续遍历
+ * <p>
+ * 层序遍历（广度优先遍历）
+ * 意义：主要是搜索策略上 广度优先遍历比深度优先遍历更有意义（深度优先遍历：前中后序遍历）
+ * 典型：最短路径，图中的深度优先遍历和广度优先遍历
  *
  * @author Damon
  * @create 2020-10-25 13:05
@@ -147,6 +154,28 @@ public class BST3<E extends Comparable> {
         preOrder(node.left);
         preOrder(node.right);
         System.out.println(node.e);
+    }
+
+    /**
+     * 层序遍历（广度优先遍历）
+     * 逐层向下遍历
+     * 非递归方式实现，队列结构
+     *
+     */
+    public void levelOrder() {
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node cur = queue.remove();
+            System.out.println(cur.e);
+
+            if (cur.left != null)
+                queue.add(cur.left);
+            if (cur.right != null)
+                queue.add(cur.right);
+        }
+
     }
 
     @Override
