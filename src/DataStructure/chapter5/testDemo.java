@@ -54,4 +54,15 @@ public class testDemo {
         System.out.println();
 
     }
+
+    @Test
+    public void testBST4(){
+        BST4<Integer> bst = new BST4<>();
+        int[] demo = {7,1,16,13,0,100,27,3,52};
+        for(int num : demo)
+            bst.add(num);
+        System.out.println(bst.maximum());
+        System.out.println(bst.minimum());
+
+    }
 }
