@@ -5,29 +5,15 @@ import java.util.Queue;
 
 /**
  * 二分搜索树Binary Search Tree
- * <p>
- * 每个节点大于左子节点，小于右子节点；
- * 存储的数据必须有可比较性；(即 对泛型E添加限制条件 实现Comparable接口)
- * <p>
- * <p>
- * 改进：在add（）里优化臃肿的递归条件,使递归到为空的叶子节点终止
- * <p>
- * 增加:
- * contains（） 判断是否包含数据e 递归实现
- * 终止条件，找到节点==null，返false（既是判断在一开始判断根节点是否为空，也是在判断到叶子节点时都没找到即没有包含改元素）
- * <p>
- * 前序、中序、后续遍历
- * <p>
- * 层序遍历（广度优先遍历）
- * 意义：主要是搜索策略上 广度优先遍历比深度优先遍历更有意义（深度优先遍历：前中后序遍历）
- * 典型：最短路径，图中的深度优先遍历和广度优先遍历
- * <p>
- * 删除最大值的节点、最小值的节点
+ * 增加
+ * 删除任意位置的节点
+ * 中序前驱，中序后继---> 中序遍历 pre target succ
+ * pre即target的中序前驱，succ是target的中序后继
  *
  * @author Damon
  * @create 2020-10-25 13:05
  */
-public class BST3<E extends Comparable> {
+public class BST4<E extends Comparable> {
 
     private class Node {
         public E e;
@@ -43,7 +29,7 @@ public class BST3<E extends Comparable> {
     private Node root;
     private int size;
 
-    public BST3() {
+    public BST4() {
         root = null;
         size = 0;
     }
