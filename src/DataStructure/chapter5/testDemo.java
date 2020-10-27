@@ -20,10 +20,10 @@ public class testDemo {
     }
 
     @Test
-    public void testBST3(){
+    public void testBST3() {
         BST3<Integer> bst = new BST3<>();
-        int[] demo = {7,1,16,13,0,100,27,3,52};
-        for(int num : demo)
+        int[] demo = {7, 1, 16, 13, 0, 100, 27, 3, 52};
+        for (int num : demo)
             bst.add(num);
 
         bst.preOrder();
@@ -42,10 +42,10 @@ public class testDemo {
     }
 
     @Test
-    public void testBST3levelOrder(){
+    public void testBST3levelOrder() {
         BST3<Integer> bst = new BST3<>();
-        int[] demo = {7,1,16,13,0,100,27,3,52};
-        for(int num : demo)
+        int[] demo = {7, 1, 16, 13, 0, 100, 27, 3, 52};
+        for (int num : demo)
             bst.add(num);
         bst.levelOrder();
         System.out.println();
@@ -56,13 +56,25 @@ public class testDemo {
     }
 
     @Test
-    public void testBST4(){
+    public void testBST4() {
         BST4<Integer> bst = new BST4<>();
-        int[] demo = {7,1,16,13,0,100,27,3,52};
-        for(int num : demo)
+        int[] demo = {7, 1, 16, 13, 0, 100, 27, 3, 52};
+        for (int num : demo)
             bst.add(num);
-        System.out.println(bst.maximum());
-        System.out.println(bst.minimum());
+        System.out.println("最大值：" + bst.maximum());
+        System.out.println("最小值：" + bst.minimum());
+
+        System.out.println();
+
+        System.out.println("删除最大值：" + bst.removeMax());
+        bst.inOrder();
+        System.out.println("最大值：" + bst.maximum());
+
+        System.out.println();
+
+        System.out.println("删除最小值：" + bst.removeMin());
+        bst.inOrder();
+        System.out.println("最小值：" + bst.minimum());
 
     }
 }
