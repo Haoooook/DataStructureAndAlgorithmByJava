@@ -9,6 +9,9 @@ package DataStructure.chapter6;
  *      int getSize()
  *      boolean isEmpty()
  *
+ *  有序集合 --->基于搜索树的实现
+ *  无序集合 --->基于哈希表的实现
+ * 
  * @author Damon
  * @create 2020-10-28 19:53
  */
