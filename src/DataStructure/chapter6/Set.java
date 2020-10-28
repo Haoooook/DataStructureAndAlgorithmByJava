@@ -8,7 +8,7 @@ package DataStructure.chapter6;
  *      boolean contains(E)
  *      int getSize()
  *      boolean isEmpty()
- *
+ *  
  *  有序集合 --->基于搜索树的实现
  *  无序集合 --->基于哈希表的实现
  * 
