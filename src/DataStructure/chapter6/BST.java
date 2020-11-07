@@ -223,30 +223,6 @@ public class BST<E extends Comparable> {
     }
 
     /**
-     * 寻找二叉树的最大值
-     *
-     * @return
-     */
-    public E maximum() {
-        if (size == 0)
-            throw new IllegalArgumentException("BST is empty");
-        Node maxNode = maximum(root);
-        return maxNode.e;
-    }
-
-    /**
-     * 寻找二叉树的最大值
-     *
-     * @param node
-     * @return 最小值所在的节点
-     */
-    private Node maximum(Node node) {
-        if (node.right == null)
-            return node;
-        return maximum(node.right);
-    }
-
-    /**
      * 找到最小值所在的节点，删除并返回最小值
      *
      * @return
@@ -274,6 +250,30 @@ public class BST<E extends Comparable> {
 
         node.left = removeMin(node.left);
         return node;
+    }
+
+    /**
+     * 寻找二叉树的最大值
+     *
+     * @return
+     */
+    public E maximum() {
+        if (size == 0)
+            throw new IllegalArgumentException("BST is empty");
+        Node maxNode = maximum(root);
+        return maxNode.e;
+    }
+
+    /**
+     * 寻找二叉树的最大值
+     *
+     * @param node
+     * @return 最小值所在的节点
+     */
+    private Node maximum(Node node) {
+        if (node.right == null)
+            return node;
+        return maximum(node.right);
     }
 
     /**
@@ -355,7 +355,7 @@ public class BST<E extends Comparable> {
             successor.right = removeMin(node.right);
             successor.left = node.left;
 
-            node.left = node.right =null;
+            node.left = node.right = null;
 
             return successor;
         }
