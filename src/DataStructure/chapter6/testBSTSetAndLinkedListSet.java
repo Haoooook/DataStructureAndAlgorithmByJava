@@ -2,7 +2,7 @@ package DataStructure.chapter6;
 
 import java.util.ArrayList;
 
-public class testBSTandLinkedList {
+public class testBSTSetAndLinkedListSet {
 
     private static double testSet(Set<String> set, String filename){
 
