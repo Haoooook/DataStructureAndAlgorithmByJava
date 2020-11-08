@@ -52,12 +52,12 @@ public class ArrayE<E> {
         return data[index];
     }
 
-    public E getFirst(){
+    public E getFirst() {
         return get(0);
     }
 
-    public E getLast(){
-        return get(size-1);
+    public E getLast() {
+        return get(size - 1);
     }
 
     public void set(int index, E e) {
@@ -203,5 +203,16 @@ public class ArrayE<E> {
         }
         result.append(']');
         return result.toString();
+    }
+
+    //交换任意两个索引位置上的元素
+    public void swap(int i, int j) {
+
+        if (i < 0 || i >= size || j < 0 || j >= size)
+            throw new IllegalArgumentException("Index is illegal !");
+
+        E temp = data[i];
+        data[i] = data[j];
+        data[j] = temp;
     }
 }
