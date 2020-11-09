@@ -36,6 +36,11 @@ public class ArrayE<E> {
         this(10);
     }
 
+    /**
+     * 根据传入的数组，构造一个一模一样的数组
+     *
+     * @param arr 传入一个数组
+     */
     public ArrayE(E[] arr) {
         data = (E[]) new Object[arr.length];
         for (int i = 0; i < arr.length; i++)
