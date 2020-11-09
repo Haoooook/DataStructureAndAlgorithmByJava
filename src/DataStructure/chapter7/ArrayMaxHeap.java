@@ -3,6 +3,10 @@ package DataStructure.chapter7;
 import DataStructure.chapter1.ArrayE;
 
 /**
+ * 二叉堆 是完全二叉树
+ * 每个节点是comparable对象
+ * 二叉堆的每个节点的值都不小于（或不大于）其任意一个子节点或子节点的子节点的值；节点的子树之间没有关系。
+ *
  * 基于动态数组实现最大堆（扩容问题由底层数组完成）
  * 用层序存储元素，元素顺序按大小排列，顺序及其索引如图"数组实现二叉堆.png"
  * 索引顺序（根据层序+元素大小顺序排列）：第一层的根为零，第二层左边为1，右边为2，第三层....
@@ -22,6 +26,11 @@ public class ArrayMaxHeap<E extends Comparable<E>> {
         data = new ArrayE<>();
     }
 
+    /**
+     * 传入一个数组直接进行二叉堆化。
+     *
+     * @param arr 传入的数组
+     */
     public void ArrayMaxHeap(E[] arr) {
         data = new ArrayE<E>(arr);
         if (arr.length != 1) {
