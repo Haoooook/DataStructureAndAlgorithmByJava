@@ -17,7 +17,7 @@ public class SegmentTree<E> {
     private Merger<E> merger;//用户定义好的合并方法
 
     public SegmentTree(E[] arr, Merger<E> merger) {
-
+        //初始化 用户定义的merge方法
         this.merger = merger;
 
         data = (E[]) new Object[arr.length];
