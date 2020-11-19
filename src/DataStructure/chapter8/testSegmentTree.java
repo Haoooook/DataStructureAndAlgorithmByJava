@@ -21,8 +21,17 @@ public class testSegmentTree {
         SegmentTree<Integer> segmentTree = new SegmentTree<>(nums, (a, b) -> a + b);
 
         System.out.println(segmentTree);
+//      [ 249, 102, 147, 4, 98, 121, 26, 4, 0, -1, 99, 100, 21, 9, 17,
+//          NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL ]
 
-//  >>>[ 249, 102, 147, 4, 98, 121, 26, 4, 0, -1, 99, 100, 21, 9, 17,
-//      NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL ]
+
+        System.out.println(segmentTree.query(1, 4));
+        System.out.println(segmentTree.query(5, 7));
+        System.out.println(segmentTree.query(1, 3));
+        System.out.println(segmentTree.query(2, 2));
+
+//        198
+//        47
+//        98
     }
 }

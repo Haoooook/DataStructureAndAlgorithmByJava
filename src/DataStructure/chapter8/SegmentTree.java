@@ -5,7 +5,7 @@ package DataStructure.chapter8;
  * 如果区间有n个元素，数组表示需要多少个节点？
  * 如果n=2^k 需要2n个空间
  * 最坏的情况 n=2^k+1, 需要4n的空间
- *
+ * <p>
  * 因此 数组实现线段树 要开辟4n空间！
  *
  * @author Haoooook
@@ -92,6 +92,45 @@ public class SegmentTree<E> {
         return 2 * index + 2;
     }
 
+    //返回目标区间【queryL，queryR】的值
+    public E query(int queryL, int queryR) {
+        if (queryL < 0 || queryR < 0 || queryL >= data.length || queryR >= data.length || queryL > queryR)
+            throw new IllegalArgumentException("The query index are illegal !");
+        //初始化里，从根节点开始（索引值为0）在整个区间【L,R】内查询 目标区间【queryL，queryR】
+        return query(0, 0, data.length - 1, queryL, queryR);
+    }
+
+    /**
+     * 查询目标区间【queryL，queryR】的值
+     *
+     * @param treeIndex 起始的节点的索引
+     * @param l         查询范围区间的下限
+     * @param r         查询范围区间的上限
+     * @param queryL    要查询的区间下限
+     * @param queryR    要查询的区间上限
+     * @return 目标区间【queryL，queryR】的值
+     */
+    private E query(int treeIndex, int l, int r, int queryL, int queryR) {
+        //递归终止条件
+        if (l == queryL && r == queryR)
+            return tree[treeIndex];
+
+        int mid = l + (r - l) / 2;
+        int leftIndex = leftChild(treeIndex);
+        int rightIndex = rightChild(treeIndex);
+
+        if (queryL >= mid + 1) //目标区间全在右子树
+            return query(rightIndex, mid + 1, r, queryL, queryR);
+        else if (queryR <= mid) //目标区间全在左子树
+            return query(leftIndex, l, mid, queryL, queryR);
+
+        //目标区间横跨两个子树 通过merger接口对象实现合并
+        E leftResult = query(leftIndex, l, mid, queryL, mid);
+        E rightResult = query(rightIndex, mid + 1, r, mid + 1, queryR);
+        return merger.merge(leftResult, rightResult);
+
+    }
+
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
@@ -99,6 +138,7 @@ public class SegmentTree<E> {
         for (int i = 0; i < tree.length; i++) {
             if (tree[i] != null)
                 res.append(tree[i]);
+
             else
                 res.append("NULL");
             if (i != tree.length - 1)
