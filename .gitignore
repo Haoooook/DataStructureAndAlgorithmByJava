@@ -4,6 +4,7 @@
 *.class
 ./out
 *.png
+*.jpg
 .out/
 
 DataStructureAndAlgorithmByJava.iml
