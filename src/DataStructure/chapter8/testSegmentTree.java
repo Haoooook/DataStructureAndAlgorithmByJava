@@ -33,5 +33,14 @@ public class testSegmentTree {
 //        198
 //        47
 //        98
+
+        System.out.println("-------------");
+
+        segmentTree.set(2,-99);
+        System.out.println(segmentTree.query(1, 4));
+        System.out.println(segmentTree.query(5, 7));
+        System.out.println(segmentTree.query(1, 3));
+        System.out.println(segmentTree.query(2, 2));
+
     }
 }

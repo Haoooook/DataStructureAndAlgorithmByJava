@@ -1,6 +1,8 @@
 package DataStructure.chapter8.LeetCode307;
 
 /**
+ * 时间较长
+ *
  * 给定一个整数数组 nums，求出数组从索引i到j(i≤j) 范围内元素的总和，包含i, j两点。
  *
  * update(i, val) 函数可以通过将下标为i的数值更新为val，从而对数列进行修改。
