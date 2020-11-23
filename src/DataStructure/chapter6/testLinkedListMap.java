@@ -15,7 +15,7 @@ public class testLinkedListMap {
 
         ArrayList<String> words1 = new ArrayList<>();
         if (FileOperation.readFile(
-                "/Users/damon/IDEA Project/DataStructureAndAlgorithmByJava/src/DataStructure/chapter6/pride-and-prejudice.txt", words1)) {
+                "src/DataStructure/chapter6/pride-and-prejudice.txt", words1)) {
 
             System.out.println("Total words: " + words1.size());
             //把每个单词放入链表map中，第一次出现则初始value为1，此后每次重复出现则累加1。

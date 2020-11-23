@@ -32,7 +32,7 @@ public class testBSTMapAndLinkedListMap {
 
     public static void main(String[] args) {
 
-        String filename = "/Users/damon/IDEA Project/DataStructureAndAlgorithmByJava/src/DataStructure/chapter6/pride-and-prejudice.txt";
+        String filename = "src/DataStructure/chapter6/pride-and-prejudice.txt";
 
         BSTMap<String, Integer> bstMap = new BSTMap<>();
         double time1 = testMap(bstMap, filename);
