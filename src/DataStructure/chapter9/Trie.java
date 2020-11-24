@@ -3,7 +3,7 @@ package DataStructure.chapter9;
 import java.util.TreeMap;
 
 /**
- * Trie 字典树 树结构 不直接存储元素而是存储Map对象，Map存储数据
+ * Trie 字典树、前缀树 树结构 不直接存储元素而是存储Map对象，Map对象存储数据
  * 类似：手机通讯录找人每输入一个字会找到对应的含有这个字的条目
  * 特点：
  * 1.根节点不保存任何数据
@@ -71,31 +71,49 @@ public class Trie {
         }
     }
 
+    //递归实现的添加方法
     public void recursionAdd(String words) {
+        //从根节点开始
         recursionAdd(root, words, 0);
     }
 
+    /**
+     * 递归实现的添加方法
+     *
+     * @param cur   当前节点
+     * @param words 要添加的单词
+     * @param index 当前辅助长度 用来记录是否遍历完words
+     */
     private void recursionAdd(Node cur, String words, int index) {
         //终止条件
         //辅助长度index 和 words的长度一致 & isWord标识为false
-        //此时就是新添加字符串 维护size 如果最后是isWord标识为true不走这个判断 不维护size 直接结束；
-        if (!cur.isWord && index == words.length()) {
+        //此时表示 添加新的字符串 维护size 如果最后是isWord标识为true不走这个判断 不维护size 直接结束；
+        if (index == words.length()) {
             cur.isWord = true;
             size++;
             return;
         }
-
-        if (words.length() > index) {//还未遍历完words字符时
+//方法一：
+        if (words.length() > index) {//字符没有遍历完
             char c = words.charAt(index);
-            if (cur.next.get(c) == null) {
-                cur = cur.next.put(c, new Node());//此时含有c字符的节点是叶子节点，继续创建下一个节点以保存words后续的字符
-            }
-            recursionAdd(cur.next.get(c), words, index + 1);//此时含有c字符的节点不是叶子节点，递归。
+            if (cur.next.get(c) == null)//原Trie没有该字符，则增加
+                cur.next.put(c, new Node());
+
+            recursionAdd(cur.next.get(c), words, index + 1);//原Trie有该字符，继续向下遍历。
         }
+/*方法二：使用public V putIfAbsent(K key, V value)
+            如果K没有关联一个value（或K映射为null）那么就关联一个给定的value值 并返null
+            如果K关联了value 那么就直接返回value；
+
+        cur.next.putIfAbsent(words.charAt(index), new Node());
+
+        recursionAdd(cur.next.get(words.charAt(index)), words, index + 1);
+*/
     }
 
     /**
      * 查询是否含有字符串
+     *
      * @param words 目标字符串
      * @return
      */
@@ -109,5 +127,47 @@ public class Trie {
             cur = cur.next.get(c);
         }
         return cur.isWord;
+    }
+
+    //递归实现
+    public boolean recursionContains(String words) {
+        return recursionContains(root, words, 0);
+    }
+
+    private boolean recursionContains(Node cur, String words, int index) {
+        //终止条件 遍历完words最后一个字符后证明包含这个words
+        if (index == words.length())
+            return cur.isWord;
+
+        if (cur.next.containsKey(words.charAt(index)))
+            recursionContains(cur.next.get(words.charAt(index)), words, index + 1);
+        return false;
+    }
+
+    //查询Trie中是否有以 words 为前缀的单词
+    public boolean isPrefix(String words) {
+        Node cur = root;
+        for (int i = 0; i < words.length(); i++) {
+            char c = words.charAt(i);
+            if (cur.next.get(c) == null) {
+                return false;
+            }
+            cur = cur.next.get(c);
+        }
+        return true;
+    }
+
+    //递归实现 查询前缀
+    private boolean recursionIsPrefix(String prefix) {
+        return recursionIsPrefix(root, prefix, 0);
+    }
+
+    private boolean recursionIsPrefix(Node cur, String prefix, int index) {
+        if (index == prefix.length())
+            return true;
+
+        if (cur.next.containsKey(prefix.charAt(index)))
+            recursionIsPrefix(cur.next.get(prefix.charAt(index)), prefix, index + 1);
+        return false;
     }
 }

@@ -4,6 +4,7 @@ package DataStructure.chapter9;
 import DataStructure.chapter6.BSTSet;
 import DataStructure.chapter6.FileOperation;
 import DataStructure.chapter6.Set;
+import org.junit.Test;
 
 import java.util.ArrayList;
 
@@ -12,7 +13,6 @@ import java.util.ArrayList;
  * @create 2020-11-23 22:55
  */
 public class testTrie {
-
     public static void main(String[] args) {
 
         String filename = "pride-and-prejudice.txt";
@@ -43,7 +43,7 @@ public class testTrie {
 
             Trie trie = new Trie();
             for (String word : words)
-                trie.add(word);
+                trie.recursionAdd(word);
 
             for (String word : words)
                 trie.contains(word);
