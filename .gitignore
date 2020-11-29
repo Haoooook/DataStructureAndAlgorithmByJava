@@ -1,9 +1,6 @@
-
 .DS_Store
-.idea/
 *.class
-
-
+.idea/
 out/
 
 DataStructureAndAlgorithmByJava.iml
