@@ -8,15 +8,16 @@ package DataStructure.chapter10;
  * 3.路径问题
  *
  * 主要功能：
- * Union（p,q）
+ * unionElements（p,q）
  * isConnected（p,q)
  *
  * @author Haoooook
  * @create 2020-11-29 21:28
  */
 public interface UnionFind {
-    void getSize();
+    int getSize();
 
+    //不关心存储对象，以int index表示索引 映射 其对应其对象
     boolean isConnected(int p, int q);
 
     void unionElements(int p, int q);
