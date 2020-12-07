@@ -3,7 +3,7 @@ package DataStructure.chapter10;
 import java.util.Random;
 
 /**
- * 测试两个版本的并查集性能
+ * 比较各版本并查集性能
  *
  * @author Haoooook
  * @create 2020-11-29 22:48
@@ -34,24 +34,22 @@ public class testUnionFind12 {
     }
 
     public static void main(String[] args) {
-        int size = 10000;
-        int m = 10000;
+        int size = 1000000;
+        int m = 1000000;
 
-        UnionFind1 uf1 = new UnionFind1(size);
-        System.out.println("UnionFind1 : " + testUnionFind(uf1, m) + "s");
+//        UnionFind1 uf1 = new UnionFind1(size);
+//        System.out.println("UnionFind1 : " + testUnionFind(uf1, m) + "s");
+//
+//        UnionFind2 uf2 = new UnionFind2(size);
+//        System.out.println("UnionFind2 : " + testUnionFind(uf2, m) + "s");
 
-        UnionFind2 uf2 = new UnionFind2(size);
-        System.out.println("UnionFind2 : " + testUnionFind(uf2, m) + "s");
+        UnionFind3 uf3 = new UnionFind3(size);
+        System.out.println("UnionFind3 : " + testUnionFind(uf3, m) + "s");
+
+        UnionFind4 uf4 = new UnionFind4(size);
+        System.out.println("UnionFind4 : " + testUnionFind(uf4, m) + "s");
+
+        UnionFind5 uf5 = new UnionFind5(size);
+        System.out.println("UnionFind5 : " + testUnionFind(uf5, m) + "s");
     }
 }
-//   size = 10 000  m = 10 000
-//      UnionFind1 : 0.055922888s
-//      UnionFind2 : 0.001436012s
-
-//   size = 100 000  m = 100 000
-//      UnionFind1 : 4.286534832s
-//      UnionFind2 : 0.012038394s
-
-//   size = 500 000  m = 500 000
-//      UnionFind1 : 107.631479669s
-//      UnionFind2 : 0.03661827s
