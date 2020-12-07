@@ -34,14 +34,14 @@ public class testUnionFind12 {
     }
 
     public static void main(String[] args) {
-        int size = 1000000;
-        int m = 1000000;
+        int size = 100000;
+        int m = 100000;
 
-//        UnionFind1 uf1 = new UnionFind1(size);
-//        System.out.println("UnionFind1 : " + testUnionFind(uf1, m) + "s");
-//
-//        UnionFind2 uf2 = new UnionFind2(size);
-//        System.out.println("UnionFind2 : " + testUnionFind(uf2, m) + "s");
+        UnionFind1 uf1 = new UnionFind1(size);
+        System.out.println("UnionFind1 : " + testUnionFind(uf1, m) + "s");
+
+        UnionFind2 uf2 = new UnionFind2(size);
+        System.out.println("UnionFind2 : " + testUnionFind(uf2, m) + "s");
 
         UnionFind3 uf3 = new UnionFind3(size);
         System.out.println("UnionFind3 : " + testUnionFind(uf3, m) + "s");
@@ -51,5 +51,8 @@ public class testUnionFind12 {
 
         UnionFind5 uf5 = new UnionFind5(size);
         System.out.println("UnionFind5 : " + testUnionFind(uf5, m) + "s");
+
+        UnionFind6 uf6 = new UnionFind6(size);
+        System.out.println("UnionFind6 : " + testUnionFind(uf6, m) + "s");
     }
 }
