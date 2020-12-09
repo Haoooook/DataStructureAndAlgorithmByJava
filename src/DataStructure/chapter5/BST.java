@@ -9,7 +9,7 @@ package DataStructure.chapter5;
  * @author Damon
  * @create 2020-10-25 13:05
  */
-public class BST<E extends Comparable> {
+public class BST<E extends Comparable<E>> {
 
     private class Node {
         public E e;
