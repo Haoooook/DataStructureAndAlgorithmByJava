@@ -4,7 +4,7 @@ package DataStructure.chapter6;
  * @author Damon
  * @create 2020-11-07 14:42
  */
-public class BSTMap<K extends Comparable, V> implements Map<K, V> {
+public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
 
     //底层实现BST的节点
     private class Node {
